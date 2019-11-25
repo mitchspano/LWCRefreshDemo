@@ -1,17 +1,50 @@
 <template>
-  <div class="slds-box slds-theme_default">
-    <lightning-record-edit-form record-id={recordId} object-api-name="Account">
+  <div class="slds-box slds-theme_default slds-p-around_medium">
+    <lightning-record-edit-form record-id={recordId} object-api-name="Account" onsubmit={handleSubmit}>
       <lightning-messages> </lightning-messages>
-      <lightning-input-field field-name="Name"> </lightning-input-field>
-      <lightning-button
-        class="slds-m-top_small"
-        variant="brand"
-        type="submit"
-        name="update"
-        label="Update"
-      >
-      </lightning-button>
+      <lightning-card title="LWC Refresh Demo">
+        <template if:true={editMode}>
+          <lightning-button
+            variant="brand"
+            label="Save"
+            title="Save"
+            type="submit"
+            icon-name="utility:save"
+            slot="actions"
+            class="slds-p-around_xxx-small"
+          ></lightning-button>
+          <lightning-button
+            variant="Neutral"
+            label="Cancel"
+            title="Cancel"
+            type="reset"
+            onclick={clearEditMode}
+            icon-name="utility:undo"
+            slot="actions"
+            class="slds-p-around_xxx-small"
+          ></lightning-button>
+        </template>
+        <template if:false={editMode}>
+          <lightning-button
+            variant="Neutral"
+            label="Edit"
+            title="Edit"
+            onclick={setEditMode}
+            icon-name="utility:edit"
+            slot="actions"
+            class="slds-p-around_xxx-small"
+          >
+          </lightning-button>
+        </template>
+        <template if:true={editMode}>
+          <lightning-input-field field-name="Name"> </lightning-input-field>
+        </template>
+        <template if:false={editMode}>
+          <div class="slds-align_absolute-center">
+            Current Account Name : {accountName}
+          </div>
+        </template>
+      </lightning-card>
     </lightning-record-edit-form>
-    Current Account Name : {accountName}
   </div>
 </template>

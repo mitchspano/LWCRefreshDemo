@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import { registerListener, fireEvent } from 'c/pubsub';
 import { refreshApex } from '@salesforce/apex';
@@ -9,6 +9,7 @@ import NAME_FIELD from '@salesforce/schema/Account.Name';
 export default class accountEditor extends LightningElement {
     @api recordId;
     @api objectApiName;
+    @track editMode = false;
     @wire(CurrentPageReference) pageRef;
     @wire(getRecord, { recordId: '$recordId', fields: [NAME_FIELD ] })
     myAccount;
@@ -22,6 +23,7 @@ export default class accountEditor extends LightningElement {
         event.preventDefault();
         const fields = event.detail.fields;
         this.template.querySelector('lightning-record-edit-form').submit(fields);
+        this.clearEditMode();
         this.forceRefreshView();
     }
 
@@ -30,10 +32,20 @@ export default class accountEditor extends LightningElement {
     }
 
     forceRefreshView() {
+        console.log('Calling Refresh from LWC');
 		fireEvent(this.pageRef, 'refreshfromlwc', this.name);
     }
 
 	handleRefresh() {
+        console.log('Listening to Refresh from LWC');
 		refreshApex(this.myAccount);
+    }
+
+    setEditMode() {
+		this.editMode = true;
+	}
+
+	clearEditMode() {
+		this.editMode = false;
 	}
 }
