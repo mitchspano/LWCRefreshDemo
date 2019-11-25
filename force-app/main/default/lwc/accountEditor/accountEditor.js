@@ -39,7 +39,7 @@ export default class accountEditor extends LightningElement {
 
 	handleRefresh() {
         // eslint-disable-next-line no-console
-        console.log('Listening to Refresh from LWC');
+        console.log('Listening to Refresh for LWC');
 		refreshApex(this.myAccount);
     }
 
