@@ -1,0 +1,4 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+  <aura:handler event="force:refreshView" action="{! c.handleForceRefreshViewForLWC }"></aura:handler>
+  <c:brokerLWC aura:id="refreshBroker" onforceRefreshView="{!c.forceRefreshView}"></c:brokerLWC>
+</aura:component>
