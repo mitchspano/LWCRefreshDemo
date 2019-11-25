@@ -32,11 +32,13 @@ export default class accountEditor extends LightningElement {
     }
 
     forceRefreshView() {
+        // eslint-disable-next-line no-console
         console.log('Calling Refresh from LWC');
 		fireEvent(this.pageRef, 'refreshfromlwc', this.name);
     }
 
 	handleRefresh() {
+        // eslint-disable-next-line no-console
         console.log('Listening to Refresh from LWC');
 		refreshApex(this.myAccount);
     }
