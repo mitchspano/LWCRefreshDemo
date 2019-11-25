@@ -3,7 +3,7 @@
 This project is meant to illustrate how to broker communications across all Aura and Lightning Web Components within the context of lightning page builder. The classic example of this is the 'e.force:refreshView' event, but in theory this could be used to broker all communiations between Aura application events and Lightning Web Components.
 
 ### Sequence Diagrams
-There are two basic flows for brokering events in this way:
+There are two basic flows for brokering in this way:
 
 ##### Aura Initiated
 ![Aura Initiated](demo/LWC%20Refresh%20Demo%20-%20Aura%20Initiated.JPG)
