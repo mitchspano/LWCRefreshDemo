@@ -23,7 +23,7 @@ There are two basic flows for brokering in this way:
 
 
 ### Adding Components to Lightning Page
-This approach will only work if the brokerAura component is somewhere (location does not matter) on the Lightnig page.
+This approach will only work if the brokerAura component is somewhere (location does not matter and the markup is empty, so nothing will be visible) on the Lightnig page.
 In this example, I have placed it above the highlights panel.
 
 ![Lightning Page](demo/LightningPageBuilder.gif)
