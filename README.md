@@ -2,6 +2,8 @@
 
 This project is meant to illustrate how to broker communications across all Aura and Lightning Web Components within the context of lightning pages. The classic example of this is the 'e.force:refreshView' event, but in theory this could be used to broker all communications between Aura application events and Lightning Web Components.
 
+It is important to note that this solution will allow developers to allow for all components on the page (Aura or LWC) to be refreshed at the same time, no matter if the component initiating the refresh is Aura or LWC.
+
 
 ### Simple Demonstration
 Here is a simple demonstration of a Lightning Web Component called accountEditor listening refreshes from other components, as well as initializing the refresh.
