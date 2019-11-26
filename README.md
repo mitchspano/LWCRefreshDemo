@@ -6,7 +6,7 @@ It is important to note that this solution will allow developers to allow for al
 
 
 ### Simple Demonstration
-Here is a simple demonstration of a Lightning Web Component called accountEditor listening refreshes from other components, as well as initializing the refresh.
+Here is a simple demonstration of a Lightning Web Component called accountEditor listening for refreshes from other components, as well as initializing the refresh.
 
 Note the chrome console log statements: 
 * The accountEditor will log 'Listening to Refresh for LWC' when another component fires the Aura e.force:refreshView event
