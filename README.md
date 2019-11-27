@@ -10,7 +10,7 @@ Here is a simple demonstration of a Lightning Web Component called accountEditor
 
 Note the chrome console log statements: 
 * The accountEditor will log 'Listening to Refresh for LWC' when another component fires the Aura e.force:refreshView event
-* The accountEditor will log 'Calling Refresh from LWC' when it is initialixing the refresh itself
+* The accountEditor will log 'Calling Refresh from LWC' when it is initializing the refresh itself
 
 ![Lightning Page](demo/refreshDemo.gif)
 
